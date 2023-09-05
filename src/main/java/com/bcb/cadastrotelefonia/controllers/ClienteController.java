@@ -48,9 +48,20 @@ public class ClienteController {
     }
     @PutMapping("/alteraSaldo")
     public ResponseEntity<Cliente> alteraSaldo(@RequestBody ClienteDTO clienteDTO) throws Exception {
-        Cliente cliente = clienteService.findById(clienteDTO.Id());
+        Cliente cliente = clienteService.findByTelefone(clienteDTO.telefone());
         if (cliente != null){
             clienteService.adicionaSaldo(cliente.getTelefone(), clienteDTO.saldo());
+            return new ResponseEntity<>(cliente, HttpStatus.OK);
+        } else {
+            throw new Exception("Cliente não encontrado!!");
+        }
+
+    }
+    @PutMapping("/alteraConta")
+    public ResponseEntity<Cliente> alteraConta(@RequestBody ClienteDTO clienteDTO) throws Exception {
+        Cliente cliente = clienteService.findByTelefone(clienteDTO.telefone());
+        if (cliente != null){
+            clienteService.alteraConta(clienteDTO);
             return new ResponseEntity<>(cliente, HttpStatus.OK);
         } else {
             throw new Exception("Cliente não encontrado!!");
