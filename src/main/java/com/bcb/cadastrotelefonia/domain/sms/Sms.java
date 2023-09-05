@@ -16,17 +16,17 @@ public class Sms {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    private String telefoneReceiver;
+    private String receiver;
 
-    private  String telefoneSender;
+    private  String sender;
 
     private boolean ehWhatts;
 
     private String mensagem;
 
     public Sms(SmsDTO smsDTO) {
-        this.telefoneReceiver = smsDTO.telefoneReceiver();
-        this.telefoneSender = smsDTO.telefoneSender();
+        this.receiver = smsDTO.telefoneReceiver();
+        this.sender = smsDTO.telefoneSender();
         this.ehWhatts = smsDTO.ehWhatts();
         this.mensagem = smsDTO.mensagem();
     }

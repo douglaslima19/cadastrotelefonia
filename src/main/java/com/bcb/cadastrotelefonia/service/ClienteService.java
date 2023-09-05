@@ -87,6 +87,14 @@ public class ClienteService {
         return cliente;
     }
 
-    
+    public Cliente alteraConta(ClienteDTO clienteDTO) throws Exception{
+        Cliente cliente = findByTelefone(clienteDTO.telefone());
+        if (cliente.getContaTipo().equals(clienteDTO.conta())){
+            throw new Exception("Cliente já é "+ clienteDTO.conta());
+        }
+        cliente.setContaTipo(clienteDTO.conta());
+        this.saveCliente(cliente);
+        return cliente;
+    }
 
 }

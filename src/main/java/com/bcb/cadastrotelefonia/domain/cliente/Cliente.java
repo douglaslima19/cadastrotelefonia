@@ -39,6 +39,7 @@ public class Cliente {
     private  BigDecimal limite;
 
     public Cliente(ClienteDTO clienteDTO) {
+        this.id = clienteDTO.Id();
         this.nome = clienteDTO.nome();
         this.email = clienteDTO.email();
         this.telefone = clienteDTO.telefone();
