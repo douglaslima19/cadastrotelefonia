@@ -5,7 +5,6 @@ import com.bcb.cadastrotelefonia.dtos.ClienteDTO;
 import com.bcb.cadastrotelefonia.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +17,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @PostMapping("/criaCliente")
+    @PostMapping
     public ResponseEntity<Cliente> criaCliente(@RequestBody ClienteDTO clienteDTO) throws Exception {
         Cliente novoCliente = clienteService.createCliente(clienteDTO);
         return new ResponseEntity<>(novoCliente, HttpStatus.CREATED);

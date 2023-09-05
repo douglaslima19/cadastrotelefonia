@@ -2,9 +2,9 @@ package com.bcb.cadastrotelefonia.domain.cliente;
 
 import com.bcb.cadastrotelefonia.domain.conta.Conta;
 import com.bcb.cadastrotelefonia.dtos.ClienteDTO;
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity(name = "cliente")
@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@Builder
 public class Cliente {
 
     @Id

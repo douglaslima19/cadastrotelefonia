@@ -1,11 +1,12 @@
 package com.bcb.cadastrotelefonia.infra;
 
 import com.bcb.cadastrotelefonia.dtos.ExceptionDTO;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import javax.persistence.EntityNotFoundException;
 
 @RestControllerAdvice
 public class ControllerExceptionHandler {

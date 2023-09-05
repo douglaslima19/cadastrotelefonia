@@ -1,10 +1,11 @@
 package com.bcb.cadastrotelefonia.domain.sms;
 
 import com.bcb.cadastrotelefonia.dtos.SmsDTO;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity(name = "sms")
 @Table(name = "sms")
