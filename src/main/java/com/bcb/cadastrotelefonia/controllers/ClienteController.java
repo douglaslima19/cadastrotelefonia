@@ -23,7 +23,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @Operation(summary = "Realiza Cadastro de novos clientes")
+    @Operation(summary = "Realiza Cadastro de novos clientes", method = "POST")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Cliente cadastrado com sucesso"),
             @ApiResponse(responseCode = "422", description = "Requisição inválida"),
@@ -41,7 +41,7 @@ public class ClienteController {
             @ApiResponse(responseCode = "422", description = "Requisição inválida!"),
             @ApiResponse(responseCode = "400", description = "Parâmetros inválidos!!"),
     })
-    @GetMapping(value = "/getSaldo", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/getSaldo", consumes = MediaType.ALL_VALUE)
     public BigDecimal saldo(@RequestParam String telefone) throws Exception {
         Cliente cliente = clienteService.findByTelefone(telefone);
         return cliente.getSaldo();
